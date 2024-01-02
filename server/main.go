@@ -5,12 +5,14 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	piston "github.com/milindmadhukar/go-piston"
 )
 
 func main() {
 	app := fiber.New()
 
+	app.Use(cors.New())
 	app.Post("/code", func(c *fiber.Ctx) error {
 		// for parsing the body
 		var body = map[string]interface{}{}
@@ -34,7 +36,7 @@ func main() {
 		// getting the output from the execution
 		output := execution.GetOutput()
 		// formtting the string to be sent as a response
-		_, errFound := c.WriteString(fmt.Sprintf("<code><pre>%s</pre></code>", output))
+		_, errFound := c.WriteString(fmt.Sprintf("<pre class='w-3/4 bg-gray-800 text-gray-300 p-2 rounded overflow-auto' id='output'>%s</pre>", output))
 		if errFound != nil {
 			return c.SendString(errFound.Error())
 		}
