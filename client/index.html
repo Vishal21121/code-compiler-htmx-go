@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Vite App</title>
+</head>
+
+<body class="bg-gray-950">
+  <div class="w-full h-[100vh] flex flex-col gap-x-0 gap-y-4 items-center p-8">
+    <div class="flex justify-end gap-4 w-full relative right-[15rem]">
+      <select name="" id="" class="bg-gray-700 text-gray-300 p-2 rounded">
+        <option value="javascript">javascript</option>
+        <option value="python">python</option>
+        <option value="go">go</option>
+        <option value="Java">Java</option>
+      </select>
+      <button
+        class="ring-2 ring-green-600 hover:shadow-green hover:shadow-green-500 px-4 py-2 rounded text-white font-semibold font-mono">
+        Submit
+      </button>
+    </div>
+    <textarea name="" id="" cols="30" rows="10"
+      class="resize-none overflow-auto w-3/4 h-1/2 bg-gray-800 text-gray-300 outline-none p-2 rounded"></textarea>
+    <p class="text-white text-2xl font-mono">Output</p>
+    <pre lang="js" class="w-3/4 bg-gray-800 text-gray-300 p-2 rounded overflow-auto">
+        console.log(" hello world")
+    </pre>
+  </div>
+</body>
+
+</html>
